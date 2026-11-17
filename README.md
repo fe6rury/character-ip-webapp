@@ -11,5 +11,5 @@
 ## 학습 데이터와 앱 동작
 
 - 팀 데이터 약 10,000개 항목을 학습에 사용했습니다. 
-- 아래는 데이터셋 파일입니다.
+- 데이터셋 파일은 구글 drive에 업로드되어있습니다.
   https://drive.google.com/drive/folders/1ISY6-dg2skbl6-f7_YB1-zCcMZ_Md0fz?usp=drive_link 
