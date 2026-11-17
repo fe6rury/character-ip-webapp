@@ -1,0 +1,243 @@
+{
+  "platform": "Windows 11 localhost, 실행.cmd",
+  "health": {
+    "status": "ok",
+    "device": "cpu",
+    "registered_images": 100,
+    "characters": 10,
+    "threshold": 0.765,
+    "yolo_ready": true,
+    "trained_recognition_ready": true,
+    "training_image_rows": 10122,
+    "yolo_confidence": 0.5
+  },
+  "outcomes": {
+    "원본": {
+      "total": 10,
+      "top1": 10,
+      "detected": 0,
+      "accepted_correct": 0
+    },
+    "의류": {
+      "total": 8,
+      "top1": 6,
+      "detected": 7,
+      "accepted_correct": 5
+    },
+    "머그컵": {
+      "total": 2,
+      "top1": 1,
+      "detected": 2,
+      "accepted_correct": 1
+    },
+    "비닐 포장": {
+      "total": 2,
+      "top1": 2,
+      "detected": 2,
+      "accepted_correct": 2
+    },
+    "펜": {
+      "total": 3,
+      "top1": 0,
+      "detected": 1,
+      "accepted_correct": 0
+    }
+  },
+  "cases": [
+    {
+      "kind": "원본",
+      "image": "c_b__001.png",
+      "expected": "c_b",
+      "actual": "c_b"
+    },
+    {
+      "kind": "원본",
+      "image": "c_by__001.png",
+      "expected": "c_by",
+      "actual": "c_by"
+    },
+    {
+      "kind": "원본",
+      "image": "c_g__001.png",
+      "expected": "c_g",
+      "actual": "c_g"
+    },
+    {
+      "kind": "원본",
+      "image": "c_gp__001.png",
+      "expected": "c_gp",
+      "actual": "c_gp"
+    },
+    {
+      "kind": "원본",
+      "image": "c_h__001.png",
+      "expected": "c_h",
+      "actual": "c_h"
+    },
+    {
+      "kind": "원본",
+      "image": "c_hb__001.png",
+      "expected": "c_hb",
+      "actual": "c_hb"
+    },
+    {
+      "kind": "원본",
+      "image": "c_hm__001.png",
+      "expected": "c_hm",
+      "actual": "c_hm"
+    },
+    {
+      "kind": "원본",
+      "image": "c_j__001.png",
+      "expected": "c_j",
+      "actual": "c_j"
+    },
+    {
+      "kind": "원본",
+      "image": "c_r__001.png",
+      "expected": "c_r",
+      "actual": "c_r"
+    },
+    {
+      "kind": "원본",
+      "image": "c_t__001.png",
+      "expected": "c_t",
+      "actual": "c_t"
+    },
+    {
+      "kind": "의류",
+      "image": "KakaoTalk_20261112_194641731.png",
+      "expected": "c_b",
+      "actual": "c_b",
+      "boxes": 1,
+      "score": 0.9998,
+      "accepted": true
+    },
+    {
+      "kind": "의류",
+      "image": "KakaoTalk_20261112_194641731_03.png",
+      "expected": "c_gp",
+      "actual": "c_b",
+      "boxes": 1,
+      "score": 0.5434,
+      "accepted": false
+    },
+    {
+      "kind": "머그컵",
+      "image": "KakaoTalk_20261112_194641731_10.png",
+      "expected": "c_b",
+      "actual": "c_b",
+      "boxes": 2,
+      "score": 0.9992,
+      "accepted": true
+    },
+    {
+      "kind": "머그컵",
+      "image": "KakaoTalk_20261112_194641731_13.png",
+      "expected": "c_gp",
+      "actual": "c_g",
+      "boxes": 1,
+      "score": 0.8477,
+      "accepted": true
+    },
+    {
+      "kind": "비닐 포장",
+      "image": "KakaoTalk_20261112_194641731_20.png",
+      "expected": "c_b",
+      "actual": "c_b",
+      "boxes": 1,
+      "score": 0.9555,
+      "accepted": true
+    },
+    {
+      "kind": "비닐 포장",
+      "image": "KakaoTalk_20261112_194641731_23.png",
+      "expected": "c_gp",
+      "actual": "c_gp",
+      "boxes": 1,
+      "score": 0.8445,
+      "accepted": true
+    },
+    {
+      "kind": "펜",
+      "image": "KakaoTalk_20261113_165520268_06.png",
+      "expected": "c_b",
+      "actual": "c_t",
+      "boxes": 0,
+      "score": 0.7691,
+      "accepted": true
+    },
+    {
+      "kind": "펜",
+      "image": "KakaoTalk_20261113_165520268_07.png",
+      "expected": "c_b",
+      "actual": "c_t",
+      "boxes": 0,
+      "score": 0.9115,
+      "accepted": true
+    },
+    {
+      "kind": "펜",
+      "image": "KakaoTalk_20261113_165520268_08.png",
+      "expected": "c_b",
+      "actual": "c_hm",
+      "boxes": 1,
+      "score": 0.7851,
+      "accepted": true
+    },
+    {
+      "kind": "의류",
+      "image": "KakaoTalk_20261113_165547721_06.png",
+      "expected": "c_b",
+      "actual": "c_b",
+      "boxes": 1,
+      "score": 0.9961,
+      "accepted": true
+    },
+    {
+      "kind": "의류",
+      "image": "KakaoTalk_20261113_165547721_07.png",
+      "expected": "c_b",
+      "actual": "c_b",
+      "boxes": 1,
+      "score": 0.9937,
+      "accepted": true
+    },
+    {
+      "kind": "의류",
+      "image": "KakaoTalk_20261113_165547721_08.png",
+      "expected": "c_b",
+      "actual": "c_b",
+      "boxes": 1,
+      "score": 0.9795,
+      "accepted": true
+    },
+    {
+      "kind": "의류",
+      "image": "KakaoTalk_20261113_165547721_15.png",
+      "expected": "c_gp",
+      "actual": "c_r",
+      "boxes": 1,
+      "score": 0.4873,
+      "accepted": false
+    },
+    {
+      "kind": "의류",
+      "image": "KakaoTalk_20261113_165547721_16.png",
+      "expected": "c_gp",
+      "actual": "c_gp",
+      "boxes": 1,
+      "score": 0.9512,
+      "accepted": true
+    },
+    {
+      "kind": "의류",
+      "image": "KakaoTalk_20261113_165547721_17.png",
+      "expected": "c_gp",
+      "actual": "c_gp",
+      "boxes": 0,
+      "score": 0.6635,
+      "accepted": false
+    }
+  ]
+}

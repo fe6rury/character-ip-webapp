@@ -1,0 +1,93 @@
+{
+  "training_image_rows": 10122,
+  "source_groups": {
+    "en": 200,
+    "ep": 2100,
+    "hn": 3591,
+    "hp": 4131,
+    "og": 100
+  },
+  "roles": {
+    "known_en": 90,
+    "unknown_en": 110,
+    "positive": 6331,
+    "hard_negative": 3591
+  },
+  "device": "cuda",
+  "backbone": "frozen DINOv2",
+  "trained_component": "ten-class masked binary classification head",
+  "grouped_benchmark": {
+    "training_indices": 5401,
+    "calibration": {
+      "known_count": 220,
+      "unknown_count": 30,
+      "known_top1": 220,
+      "correctly_accepted": 220,
+      "unknown_rejected": 30
+    },
+    "grouped_test": {
+      "known_count": 220,
+      "unknown_count": 30,
+      "known_top1": 220,
+      "correctly_accepted": 219,
+      "unknown_rejected": 29,
+      "by_character": {
+        "B": {
+          "n": 22,
+          "top1": 22
+        },
+        "BY": {
+          "n": 22,
+          "top1": 22
+        },
+        "G": {
+          "n": 22,
+          "top1": 22
+        },
+        "GP": {
+          "n": 22,
+          "top1": 22
+        },
+        "H": {
+          "n": 22,
+          "top1": 22
+        },
+        "HB": {
+          "n": 22,
+          "top1": 22
+        },
+        "HM": {
+          "n": 22,
+          "top1": 22
+        },
+        "J": {
+          "n": 22,
+          "top1": 22
+        },
+        "R": {
+          "n": 22,
+          "top1": 22
+        },
+        "T": {
+          "n": 22,
+          "top1": 22
+        }
+      }
+    },
+    "note": "Separate benchmark head. Grouped OG/EP and unknown EN, excludes HP and known EN in benchmark fitting. Final head fits all data after calibration."
+  },
+  "review_threshold": 0.765,
+  "drive_exact_duplicate_aliases": {
+    "easy_negative 모음집/고양고양이/G_001.png": "고양고양이 (G)/og/G_001.png",
+    "easy_negative 모음집/고양고양이/G_002.png": "고양고양이 (G)/og/G_002.png",
+    "easy_negative 모음집/고양고양이/G_003.png": "고양고양이 (G)/og/G_003.png",
+    "easy_negative 모음집/고양고양이/G_004.png": "고양고양이 (G)/og/G_004.png",
+    "easy_negative 모음집/고양고양이/G_005.png": "고양고양이 (G)/og/G_005.png",
+    "easy_negative 모음집/고양고양이/G_006.png": "고양고양이 (G)/og/G_006.png",
+    "easy_negative 모음집/고양고양이/G_007.png": "고양고양이 (G)/og/G_007.png",
+    "easy_negative 모음집/고양고양이/G_008.png": "고양고양이 (G)/og/G_008.png",
+    "easy_negative 모음집/고양고양이/G_009.png": "고양고양이 (G)/og/G_009.png",
+    "easy_negative 모음집/고양고양이/G_010.png": "고양고양이 (G)/og/G_010.png"
+  },
+  "source": "팀 Drive 읽기 전용 마운트"
+}

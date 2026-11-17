@@ -1,0 +1,120 @@
+{
+  "device": "cpu",
+  "elapsed_seconds": 753,
+  "inventory": {
+    "gallery": 100,
+    "drive_inventory": {
+      "B": {
+        "og": 10,
+        "ep": 210,
+        "hp": 420,
+        "hn": 351
+      },
+      "BY": {
+        "og": 10,
+        "ep": 210,
+        "hp": 420,
+        "hn": 360
+      },
+      "G": {
+        "og": 10,
+        "ep": 210,
+        "hp": 420,
+        "hn": 360
+      },
+      "GP": {
+        "og": 10,
+        "ep": 210,
+        "hp": 351,
+        "hn": 360
+      },
+      "H": {
+        "og": 10,
+        "ep": 210,
+        "hp": 420,
+        "hn": 360
+      },
+      "HB": {
+        "og": 10,
+        "ep": 210,
+        "hp": 420,
+        "hn": 360
+      },
+      "HM": {
+        "og": 10,
+        "ep": 210,
+        "hp": 420,
+        "hn": 360
+      },
+      "J": {
+        "og": 10,
+        "ep": 210,
+        "hp": 420,
+        "hn": 360
+      },
+      "R": {
+        "og": 10,
+        "ep": 210,
+        "hp": 420,
+        "hn": 360
+      },
+      "T": {
+        "og": 10,
+        "ep": 210,
+        "hp": 420,
+        "hn": 360
+      }
+    },
+    "yolo_products": {
+      "test": 15,
+      "train": 39,
+      "val": 14
+    },
+    "product_review": 3
+  },
+  "detector_test": {
+    "metrics/precision(B)": 0.9222100465184221,
+    "metrics/recall(B)": 0.7909844837915899,
+    "metrics/mAP50(B)": 0.8909394024648523,
+    "metrics/mAP50-95(B)": 0.7218317228422,
+    "fitness": 0.7218317228422
+  },
+  "product_top1": {
+    "의류": {
+      "total": 8,
+      "full": 8,
+      "combined": 8,
+      "detected": 7
+    },
+    "머그컵": {
+      "total": 2,
+      "full": 2,
+      "combined": 2,
+      "detected": 2
+    },
+    "비닐 포장": {
+      "total": 2,
+      "full": 2,
+      "combined": 2,
+      "detected": 2
+    },
+    "펜": {
+      "total": 3,
+      "full": 0,
+      "combined": 0,
+      "detected": 1
+    }
+  },
+  "test_scope": "상품 예시 15장(부기·갓평이). 10종 실촬영 일반화 검증에 해당하지 않음.",
+  "deployment_selection": {
+    "checkpoint": "epoch13.pt",
+    "confidence": 0.5,
+    "true_positives": 12,
+    "false_positives": 0,
+    "false_negatives": 2,
+    "f1": 0.9230769230769231,
+    "precision": 1.0,
+    "validation_images": 14
+  },
+  "deployment_confidence": 0.5
+}
