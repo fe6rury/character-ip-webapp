@@ -9,6 +9,7 @@
 
 import io
 import json
+import math
 from threading import Lock
 from urllib.parse import quote
 from contextlib import asynccontextmanager
@@ -18,7 +19,7 @@ from typing import List, Optional
 import numpy as np
 import pandas as pd
 import torch
-from fastapi import FastAPI, File, HTTPException, UploadFile
+from fastapi import FastAPI, File, Form, HTTPException, UploadFile
 from fastapi.responses import FileResponse
 from starlette.concurrency import run_in_threadpool
 from fastapi.staticfiles import StaticFiles
@@ -252,6 +253,7 @@ class Detection(BaseModel):
 
 class IdentifyResponse(BaseModel):
     filename: Optional[str]
+    region: Optional[list[float]] = None
     threshold: float
     flagged: bool             # 하나라도 걸렸는가
     summary: str
@@ -291,7 +293,10 @@ def characters():
 
 
 @app.post("/api/identify", response_model=IdentifyResponse, summary="유사도 판정")
-async def identify(file: UploadFile = File(..., description="검사할 이미지")):
+async def identify(
+    file: UploadFile = File(..., description="검사할 이미지"),
+    region: Optional[str] = Form(None, max_length=200),
+):
     raw = await file.read(MAX_UPLOAD + 1)
     if len(raw) > MAX_UPLOAD:
         raise HTTPException(413, "20 MB 이하 이미지를 업로드하세요.")
@@ -303,7 +308,25 @@ async def identify(file: UploadFile = File(..., description="검사할 이미지
             im = ImageOps.exif_transpose(source)
     except (OSError, ValueError, Image.DecompressionBombError) as exc:
         raise HTTPException(400, "이미지로 읽을 수 없는 파일입니다.") from exc
-    return await run_in_threadpool(compare_image, im, file.filename)
+    selection = None
+    if region is not None:
+        try:
+            selection = [float(v) for v in (region or "").split(",")]
+            if len(selection) != 4 or not all(math.isfinite(v) for v in selection):
+                raise ValueError
+            left, top, right, bottom = selection
+            if not (0 <= left < right <= 1 and 0 <= top < bottom <= 1):
+                raise ValueError
+        except ValueError:
+            raise HTTPException(422, "사진에서 분석할 영역을 드래그해 선택해 주세요.") from None
+        w, h = im.size
+        box = (math.floor(left*w), math.floor(top*h), math.ceil(right*w), math.ceil(bottom*h))
+        if box[2]-box[0] < 8 or box[3]-box[1] < 8:
+            raise HTTPException(422, "가로와 세로가 각각 8픽셀 이상인 영역을 선택해 주세요.")
+        im = im.crop(box)
+    result = await run_in_threadpool(compare_image, im, file.filename)
+    result["region"] = selection
+    return result
 
 
 def compare_image(im: Image.Image, filename: Optional[str]):

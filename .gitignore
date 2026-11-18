@@ -1,0 +1,6 @@
+.venv/
+.runtime/
+__pycache__/
+*.py[cod]
+Ultralytics/
+data/dinov2-base/
